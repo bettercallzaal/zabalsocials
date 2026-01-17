@@ -1,0 +1,276 @@
+{
+  "brands": [
+    {
+      "id": "bettercallzaal",
+      "name": "BetterCallZaal",
+      "description": "Personal brand focused on thought leadership, ZAO reflections, and Year of the ZAO",
+      "color": "#3B82F6",
+      "platforms": [
+        {
+          "platform": "Twitter (X)",
+          "handle": "@BetterCallZaal",
+          "url": "https://x.com/BetterCallZaal",
+          "purpose": "Personal + thought leadership, ZAO reflections, Year of the ZAO",
+          "notes": "Primary BCZ channel",
+          "icon": "twitter"
+        },
+        {
+          "platform": "Farcaster",
+          "handle": "/bettercallzaal",
+          "url": "https://warpcast.com/bettercallzaal",
+          "purpose": "Mindful + daily reflections, ZAO culture, builder insights",
+          "notes": "Posts in /zao, /wavewarz, /mindfulness, /thecreators",
+          "icon": "farcaster"
+        },
+        {
+          "platform": "Paragraph",
+          "handle": "@bettercallzaal",
+          "url": "https://paragraph.xyz/@bettercallzaal",
+          "purpose": "Personal newsletters, Year of the ZAO",
+          "notes": "Connected to ZAO ecosystem newsletters",
+          "icon": "newspaper"
+        },
+        {
+          "platform": "YouTube",
+          "handle": "BetterCallZaal",
+          "url": "https://youtube.com/@BetterCallZaal",
+          "purpose": "Long-form & visual storytelling — Yaps, Web3 talks, ZAO recaps",
+          "notes": "Needs organized playlists",
+          "icon": "youtube"
+        },
+        {
+          "platform": "Twitch",
+          "handle": "BetterCallZaal",
+          "url": "https://twitch.tv/BetterCallZaal",
+          "purpose": "Livestreams: \"Let's Talk About Web3,\" WaveWarZ sets, DJ sessions",
+          "notes": "Linked to Nightbot setup",
+          "icon": "twitch"
+        },
+        {
+          "platform": "Instagram",
+          "handle": "@BetterCallZaal",
+          "url": "https://instagram.com/BetterCallZaal",
+          "purpose": "Lighter personal content, behind-the-scenes, cross-promote events",
+          "notes": "To unify visual aesthetic",
+          "icon": "instagram"
+        },
+        {
+          "platform": "Threads",
+          "handle": "@BetterCallZaal",
+          "url": "https://threads.net/@BetterCallZaal",
+          "purpose": "Lighter personal content, behind-the-scenes, cross-promote events",
+          "notes": "To unify visual aesthetic",
+          "icon": "threads"
+        },
+        {
+          "platform": "Discord",
+          "handle": "BetterCallZaal Server",
+          "url": "https://discord.gg/bettercallzaal",
+          "purpose": "Hub for Yaps and community calls",
+          "notes": "Integrate with ZAO + WaveWarZ roles",
+          "icon": "discord"
+        }
+      ]
+    },
+    {
+      "id": "thezaodao",
+      "name": "The ZAO DAO",
+      "description": "Official DAO communications, partnerships, launches, and protocol integrations",
+      "color": "#8B5CF6",
+      "platforms": [
+        {
+          "platform": "Twitter (X)",
+          "handle": "@TheZAODAO",
+          "url": "https://x.com/TheZAODAO",
+          "purpose": "Official DAO communications — partnerships, launches, protocol integrations",
+          "notes": "Active in onchain ecosystem collabs",
+          "icon": "twitter"
+        },
+        {
+          "platform": "Farcaster",
+          "handle": "/thezao",
+          "url": "https://warpcast.com/~/channel/thezao",
+          "purpose": "DAO announcements, ecosystem coordination, daily posts",
+          "notes": "Official /ZAO channel host",
+          "icon": "farcaster"
+        },
+        {
+          "platform": "Paragraph",
+          "handle": "@thezao",
+          "url": "https://paragraph.xyz/@thezao",
+          "purpose": "Ecosystem newsletters, whitepapers, announcements",
+          "notes": "Official ZAO Newsletter host",
+          "icon": "newspaper"
+        },
+        {
+          "platform": "Telegram",
+          "handle": "The ZAO DAO",
+          "url": "https://t.me/thezaodao",
+          "purpose": "Community coordination, announcements, cohort updates",
+          "notes": "Consider adding pin templates",
+          "icon": "telegram"
+        },
+        {
+          "platform": "Discord",
+          "handle": "The ZAO",
+          "url": "https://discord.gg/thezao",
+          "purpose": "Community management + roles via Hats / Fractals",
+          "notes": "Sync roles with governance flow",
+          "icon": "discord"
+        }
+      ]
+    },
+    {
+      "id": "zaofestivals",
+      "name": "ZAO Festivals",
+      "description": "Event coverage for ZAOCHELLA, ZAO-PALOOZA, and other ZAO festival experiences",
+      "color": "#EC4899",
+      "platforms": [
+        {
+          "platform": "Twitter (X)",
+          "handle": "@ZAOFestivals",
+          "url": "https://x.com/ZAOFestivals",
+          "purpose": "Event coverage: ZAOCHELLA, ZAO-PALOOZA, etc.",
+          "notes": "Visual / event energy",
+          "icon": "twitter"
+        },
+        {
+          "platform": "Instagram",
+          "handle": "@ZAOFestivals",
+          "url": "https://instagram.com/ZAOFestivals",
+          "purpose": "Event visuals, reels, artist shoutouts",
+          "notes": "Strong storytelling visuals",
+          "icon": "instagram"
+        },
+        {
+          "platform": "Paragraph",
+          "handle": "@zaofestivals",
+          "url": "https://paragraph.xyz/@zaofestivals",
+          "purpose": "Festival announcements + recaps",
+          "notes": "Use for post-event reports",
+          "icon": "newspaper"
+        },
+        {
+          "platform": "Farcaster",
+          "handle": "/zaofestivals",
+          "url": "https://warpcast.com/~/channel/zaofestivals",
+          "purpose": "Showcases artist collaborations + event threads",
+          "notes": "Link to /music /zao",
+          "icon": "farcaster"
+        },
+        {
+          "platform": "TikTok",
+          "handle": "@ZAOFestivals",
+          "url": "https://tiktok.com/@ZAOFestivals",
+          "purpose": "Festival BTS + fan content",
+          "notes": "Can sync with recap footage",
+          "icon": "tiktok"
+        }
+      ]
+    },
+    {
+      "id": "zaocalendar",
+      "name": "ZAO Calendar",
+      "description": "Master event calendar for all ZAO projects and community events",
+      "color": "#10B981",
+      "platforms": [
+        {
+          "platform": "Luma",
+          "handle": "ZAO Fractals",
+          "url": "https://zaofractals.lu.ma",
+          "purpose": "Master event calendar for all ZAO projects",
+          "notes": "Connected to ZAO Fractals & DAO calls",
+          "icon": "calendar"
+        },
+        {
+          "platform": "Google Calendar",
+          "handle": "ZAO Fractals Calendar",
+          "url": "https://calendar.google.com/calendar/u/0?cid=zaofractals",
+          "purpose": "Internal event coordination",
+          "notes": "Use for reminders & internal invites",
+          "icon": "calendar"
+        },
+        {
+          "platform": "Farcaster",
+          "handle": "/zaocalendar",
+          "url": "https://warpcast.com/~/channel/zaocalendar",
+          "purpose": "Weekly post sharing upcoming events",
+          "notes": "Could integrate auto-sync with Luma RSS",
+          "icon": "farcaster"
+        }
+      ]
+    },
+    {
+      "id": "wavewarz",
+      "name": "WaveWarZ",
+      "description": "DJ battle platform with wagering, leaderboards, and live streaming",
+      "color": "#F59E0B",
+      "platforms": [
+        {
+          "platform": "Twitter (X)",
+          "handle": "@WaveWarZ",
+          "url": "https://x.com/WaveWarZ",
+          "purpose": "Battles, results, platform updates",
+          "notes": "Tie to @WavyFans + @WaveWarZApp",
+          "icon": "twitter"
+        },
+        {
+          "platform": "Farcaster",
+          "handle": "/wavewarz",
+          "url": "https://warpcast.com/~/channel/wavewarz",
+          "purpose": "Battle announcements + live score updates",
+          "notes": "Hub for /wavewarz channel activity",
+          "icon": "farcaster"
+        },
+        {
+          "platform": "Website",
+          "handle": "WaveWarZ.com",
+          "url": "https://www.wavewarz.com",
+          "purpose": "Dapp: wager battles, leaderboard",
+          "notes": "Integrate with DJ Wavy AI",
+          "icon": "globe"
+        },
+        {
+          "platform": "Paragraph",
+          "handle": "@wavewarz",
+          "url": "https://paragraph.xyz/@wavewarz",
+          "purpose": "Recaps, feature drops, and announcements",
+          "notes": "For longform storytelling",
+          "icon": "newspaper"
+        },
+        {
+          "platform": "Twitch",
+          "handle": "WaveWarZ",
+          "url": "https://twitch.tv/WaveWarZ",
+          "purpose": "Livestream battles, OG Battle highlights",
+          "notes": "Sync with BCZ + EZ + Ohnahji",
+          "icon": "twitch"
+        },
+        {
+          "platform": "YouTube",
+          "handle": "WaveWarZ",
+          "url": "https://youtube.com/@WaveWarZ",
+          "purpose": "Battle replays + recaps",
+          "notes": "Great for growing visibility",
+          "icon": "youtube"
+        },
+        {
+          "platform": "Instagram",
+          "handle": "@WaveWarZ",
+          "url": "https://instagram.com/WaveWarZ",
+          "purpose": "Battle clips, highlights, short-form reels",
+          "notes": "Needs unified branding across apps",
+          "icon": "instagram"
+        },
+        {
+          "platform": "TikTok",
+          "handle": "@WaveWarZ",
+          "url": "https://tiktok.com/@WaveWarZ",
+          "purpose": "Battle clips, highlights, short-form reels",
+          "notes": "Needs unified branding across apps",
+          "icon": "tiktok"
+        }
+      ]
+    }
+  ]
+}
