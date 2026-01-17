@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Centralized hub for all Zaal's social media links and brands",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
