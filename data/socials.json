@@ -7,12 +7,21 @@
       "color": "#3B82F6",
       "platforms": [
         {
+          "platform": "LinkedIn",
+          "handle": "Zaal Panthaki",
+          "url": "https://linkedin.com/in/zaalp",
+          "purpose": "Professional profile and network",
+          "notes": "Backend engineer, Web3 builder",
+          "icon": "globe"
+        },
+        {
           "platform": "Twitter (X)",
           "handle": "@BetterCallZaal",
           "url": "https://x.com/BetterCallZaal",
           "purpose": "Personal + thought leadership, ZAO reflections, Year of the ZAO",
           "notes": "Primary BCZ channel",
-          "icon": "twitter"
+          "icon": "twitter",
+          "isPrimary": true
         },
         {
           "platform": "Farcaster",
@@ -79,12 +88,22 @@
       "color": "#8B5CF6",
       "platforms": [
         {
+          "platform": "Website",
+          "handle": "TheZAO.com",
+          "url": "https://www.thezao.com/",
+          "purpose": "Official ZAO DAO website — about, community, calendar, leaderboard",
+          "notes": "Start here for ZAO ecosystem overview",
+          "icon": "globe",
+          "isPrimary": true
+        },
+        {
           "platform": "Twitter (X)",
           "handle": "@TheZAODAO",
           "url": "https://x.com/TheZAODAO",
           "purpose": "Official DAO communications — partnerships, launches, protocol integrations",
           "notes": "Active in onchain ecosystem collabs",
-          "icon": "twitter"
+          "icon": "twitter",
+          "isPrimary": true
         },
         {
           "platform": "Farcaster",
@@ -127,12 +146,22 @@
       "color": "#EC4899",
       "platforms": [
         {
+          "platform": "Website",
+          "handle": "ZAOFestivals.com",
+          "url": "https://zaofestivals.com/",
+          "purpose": "Official festival website — events, artists, tickets, sponsors",
+          "notes": "Primary destination for festival information",
+          "icon": "globe",
+          "isPrimary": true
+        },
+        {
           "platform": "Twitter (X)",
           "handle": "@ZAOFestivals",
           "url": "https://x.com/ZAOFestivals",
           "purpose": "Event coverage: ZAOCHELLA, ZAO-PALOOZA, etc.",
           "notes": "Visual / event energy",
-          "icon": "twitter"
+          "icon": "twitter",
+          "isPrimary": true
         },
         {
           "platform": "Instagram",
@@ -180,7 +209,8 @@
           "url": "https://zaofractals.lu.ma",
           "purpose": "Master event calendar for all ZAO projects",
           "notes": "Connected to ZAO Fractals & DAO calls",
-          "icon": "calendar"
+          "icon": "calendar",
+          "isPrimary": true
         },
         {
           "platform": "Google Calendar",
@@ -226,9 +256,10 @@
           "platform": "Website",
           "handle": "WaveWarZ.com",
           "url": "https://www.wavewarz.com",
-          "purpose": "Dapp: wager battles, leaderboard",
-          "notes": "Integrate with DJ Wavy AI",
-          "icon": "globe"
+          "purpose": "Official dapp — wager battles, leaderboard, live music battles",
+          "notes": "Primary platform for WaveWarZ experience",
+          "icon": "globe",
+          "isPrimary": true
         },
         {
           "platform": "Paragraph",
