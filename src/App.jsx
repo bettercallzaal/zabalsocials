@@ -1,3 +1,4 @@
+// === Imports ===
 import { useState } from 'react'
 import { 
   Twitter, 
@@ -16,6 +17,9 @@ import {
 } from 'lucide-react'
 import socialsData from '../data/socials.json'
 
+// === Icon Mapping ===
+// Maps icon string identifiers from socials.json to Lucide React components
+// See docs/DATA_SCHEMA.md for valid icon names
 const iconMap = {
   twitter: Twitter,
   instagram: Instagram,
@@ -31,10 +35,14 @@ const iconMap = {
   threads: MessageCircle,
 }
 
+// === Main Component ===
 function App() {
+  // === State Management ===
   const [selectedBrand, setSelectedBrand] = useState(null)
   const [searchTerm, setSearchTerm] = useState('')
 
+  // === Filtering Logic ===
+  // Filter brands by search term (searches across brand name, description, platform names, and purposes)
   const filteredBrands = socialsData.brands.filter(brand => 
     brand.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     brand.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -44,15 +52,19 @@ function App() {
     )
   )
 
+  // Combine brand filter with search filter
   const displayBrands = selectedBrand 
     ? socialsData.brands.filter(b => b.id === selectedBrand)
     : filteredBrands
 
+  // === Rendering ===
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+      {/* Background pattern: SVG grid with low opacity for subtle texture */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0djItaDJWMzRoLTJ6bTAtNGgydjJoLTJ2LTJ6bTAtNGgydjJoLTJ2LTJ6bTAtNGgydjJoLTJ2LTJ6bTAtNGgydjJoLTJ2LTJ6bTAtNGgydjJoLTJ2LTJ6bTAtNGgydjJoLTJ2LTJ6bTAtNGgydjJoLTJ2LTJ6bTAtNGgydjJoLTJ2LTJ6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-20"></div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* === Header Section === */}
         <header className="text-center mb-16">
           <h1 className="text-6xl font-bold mb-4 gradient-text from-blue-400 via-purple-400 to-pink-400">
             Zaal Socials
@@ -62,6 +74,7 @@ function App() {
           </p>
         </header>
 
+        {/* === Search and Filter Controls === */}
         <div className="mb-8 flex flex-col sm:flex-row gap-4">
           <div className="flex-1 relative">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
@@ -101,6 +114,7 @@ function App() {
           </div>
         </div>
 
+        {/* === Brand Cards Grid === */}
         <div className="grid gap-8">
           {displayBrands.map(brand => (
             <div 
@@ -159,12 +173,14 @@ function App() {
           ))}
         </div>
 
+        {/* === Empty State === */}
         {displayBrands.length === 0 && (
           <div className="text-center py-16">
             <p className="text-gray-400 text-lg">No results found. Try a different search term.</p>
           </div>
         )}
 
+        {/* === Footer === */}
         <footer className="mt-16 text-center text-gray-500 text-sm">
           <p>© {new Date().getFullYear()} Zaal Ecosystem. All rights reserved.</p>
           <p className="mt-2">Built with React + TailwindCSS + Lucide Icons</p>

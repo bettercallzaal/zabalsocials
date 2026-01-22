@@ -2,6 +2,14 @@
 
 A centralized hub for all social media links across the Zaal ecosystem. This modern web application provides an organized, searchable interface to access all social platforms for BetterCallZaal, The ZAO DAO, ZAO Festivals, ZAO Calendar, and WaveWarZ.
 
+**🔗 Live Site:** https://zabalsocials.vercel.app/
+
+## 📚 Documentation
+
+- **[Data Schema Guide](docs/DATA_SCHEMA.md)** - Complete documentation for `socials.json` structure
+- **[Contributing Guide](CONTRIBUTING.md)** - How to add or update social links
+- **[Changelog](CHANGELOG.md)** - Project history and release notes
+
 ## 🎯 Features
 
 - **Multi-Brand Organization**: Separate sections for each brand in the Zaal ecosystem
@@ -62,9 +70,9 @@ ZaalSocials/
 
 ## 📝 Adding New Social Links
 
-To add new platforms or brands, edit `data/socials.json`:
+**For detailed instructions, see the [Data Schema Guide](docs/DATA_SCHEMA.md) and [Contributing Guide](CONTRIBUTING.md).**
 
-### Adding a New Platform to an Existing Brand
+Quick example for adding a new platform:
 
 ```json
 {
@@ -73,39 +81,16 @@ To add new platforms or brands, edit `data/socials.json`:
   "url": "https://linkedin.com/in/yourhandle",
   "purpose": "Professional networking and updates",
   "notes": "Optional notes about this platform",
-  "icon": "globe"
+  "icon": "globe",
+  "isPrimary": false
 }
 ```
 
-### Adding a New Brand
-
-```json
-{
-  "id": "newbrand",
-  "name": "New Brand Name",
-  "description": "Description of this brand",
-  "color": "#FF6B6B",
-  "platforms": [
-    // ... platform objects
-  ]
-}
-```
-
-### Available Icons
-
-The following icons are available (from Lucide React):
-- `twitter` - Twitter/X
-- `instagram` - Instagram
-- `youtube` - YouTube
-- `twitch` - Twitch
-- `globe` - Generic website
-- `calendar` - Calendar platforms
-- `newspaper` - Newsletter/blog platforms
-- `discord` - Discord
-- `telegram` - Telegram
-- `farcaster` - Farcaster (uses MessageCircle)
-- `tiktok` - TikTok (uses Music)
-- `threads` - Threads (uses MessageCircle)
+See [docs/DATA_SCHEMA.md](docs/DATA_SCHEMA.md) for:
+- Complete field documentation
+- Available icon names
+- `isPrimary` flag usage
+- Validation checklist
 
 ## 🎨 Customization
 
@@ -126,23 +111,25 @@ The app uses TailwindCSS for styling. Modify `tailwind.config.js` to customize:
 
 ## 🌐 Deployment
 
-This app can be deployed to any static hosting service:
+**This project is deployed to Vercel with automatic deployments.**
 
-### Netlify
-```bash
-npm run build
-# Deploy the dist/ folder
-```
+- **Production URL:** https://zabalsocials.vercel.app/
+- **Deployment:** Automatic on push to `main` branch
+- **Build Command:** `npm run build`
+- **Output Directory:** `dist/`
 
-### Vercel
-```bash
-npm run build
-# Deploy the dist/ folder
-```
+### How Deployments Work
 
-### GitHub Pages
-1. Build the project: `npm run build`
-2. Push the `dist/` folder to a `gh-pages` branch
+1. Push changes to the `main` branch (or merge a PR)
+2. Vercel automatically detects the change
+3. Vercel runs `npm run build`
+4. Site updates at https://zabalsocials.vercel.app/ within ~1 minute
+
+**No manual deployment steps required.**
+
+### Alternative Hosting
+
+This app can also be deployed to other static hosting services (Netlify, GitHub Pages, etc.) by building with `npm run build` and deploying the `dist/` folder.
 
 ## 📊 Current Brands
 
@@ -166,10 +153,16 @@ Private repository for Zaal's social media management.
 
 ## 🤝 Contributing
 
-To add or update social links:
-1. Edit `data/socials.json`
-2. Test locally with `npm run dev`
-3. Commit and push changes
+**See the [Contributing Guide](CONTRIBUTING.md) for detailed instructions.**
+
+Quick steps:
+1. Read [docs/DATA_SCHEMA.md](docs/DATA_SCHEMA.md) for schema documentation
+2. Edit `data/socials.json`
+3. Test locally with `npm run dev`
+4. Verify all links work
+5. Commit and push changes
+
+Changes pushed to `main` will automatically deploy to production via Vercel.
 
 ---
 
