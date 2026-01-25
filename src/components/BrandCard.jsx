@@ -1,6 +1,7 @@
+import { memo } from 'react'
 import PlatformCard from './PlatformCard'
 
-function BrandCard({ brand, onLinkClick }) {
+const BrandCard = memo(function BrandCard({ brand, onLinkClick }) {
   return (
     <article 
       className="bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 overflow-hidden shadow-2xl hover:shadow-purple-500/20 transition-all duration-300"
@@ -30,6 +31,6 @@ function BrandCard({ brand, onLinkClick }) {
       </div>
     </article>
   )
-}
+})
 
 export default BrandCard

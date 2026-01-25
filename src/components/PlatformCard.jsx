@@ -1,8 +1,9 @@
+import { memo } from 'react'
 import { ExternalLink } from 'lucide-react'
 import { iconMap } from '../utils/iconMap'
 import { Globe } from 'lucide-react'
 
-function PlatformCard({ brand, platform, onLinkClick }) {
+const PlatformCard = memo(function PlatformCard({ brand, platform, onLinkClick }) {
   const Icon = iconMap[platform.icon] || Globe
 
   return (
@@ -40,6 +41,6 @@ function PlatformCard({ brand, platform, onLinkClick }) {
       </a>
     </li>
   )
-}
+})
 
 export default PlatformCard

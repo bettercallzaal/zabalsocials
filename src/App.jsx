@@ -1,12 +1,15 @@
-import { useState } from 'react'
+import { useState, useCallback, lazy, Suspense } from 'react'
 import socialsData from '../data/socials.json'
 import { useFilteredBrands } from './hooks/useFilteredBrands'
 import Header from './components/Header'
 import SearchBar from './components/SearchBar'
 import BrandFilter from './components/BrandFilter'
-import BrandCard from './components/BrandCard'
-import EmptyState from './components/EmptyState'
+import BrandCardSkeleton from './components/BrandCardSkeleton'
 import Footer from './components/Footer'
+
+// Lazy load below-the-fold components for code splitting
+const BrandCard = lazy(() => import('./components/BrandCard'))
+const EmptyState = lazy(() => import('./components/EmptyState'))
 
 // === Analytics Helper ===
 // Centralized function for tracking events with Plausible Analytics
@@ -29,7 +32,7 @@ function App() {
 
   // === Analytics: Search Usage Tracking ===
   // Debounced search tracking to avoid excessive events
-  const handleSearchChange = (e) => {
+  const handleSearchChange = useCallback((e) => {
     const query = e.target.value
     setSearchTerm(query)
     
@@ -56,10 +59,10 @@ function App() {
         })
       }, 1000) // 1 second debounce
     }
-  }
+  }, [])
 
   // === Analytics: Brand Filter Tracking ===
-  const handleBrandFilterClick = (brandId) => {
+  const handleBrandFilterClick = useCallback((brandId) => {
     const isActivating = brandId !== selectedBrand
     
     // Track filter usage
@@ -69,17 +72,17 @@ function App() {
     })
     
     setSelectedBrand(brandId)
-  }
+  }, [selectedBrand])
 
   // === Analytics: Social Link Click Tracking ===
-  const handleLinkClick = (brand, platform) => {
+  const handleLinkClick = useCallback((brand, platform) => {
     trackEvent('Social Link Click', {
       brand: brand.name,
       platform: platform.platform,
       isPrimary: platform.isPrimary || false,
       url: platform.url
     })
-  }
+  }, [])
 
   // === Filtering Logic ===
   const { filteredBrands, hasResults } = useFilteredBrands(
@@ -114,17 +117,24 @@ function App() {
         </nav>
 
         <main id="main-content" role="main" aria-label="Social media links by brand">
-          <div className="grid gap-8">
-            {filteredBrands.map(brand => (
-              <BrandCard 
-                key={brand.id}
-                brand={brand}
-                onLinkClick={handleLinkClick}
-              />
-            ))}
-          </div>
+          <Suspense fallback={
+            <div className="grid gap-8">
+              <BrandCardSkeleton />
+              <BrandCardSkeleton />
+            </div>
+          }>
+            <div className="grid gap-8">
+              {filteredBrands.map(brand => (
+                <BrandCard 
+                  key={brand.id}
+                  brand={brand}
+                  onLinkClick={handleLinkClick}
+                />
+              ))}
+            </div>
 
-          {!hasResults && <EmptyState />}
+            {!hasResults && <EmptyState />}
+          </Suspense>
         </main>
 
         <Footer />

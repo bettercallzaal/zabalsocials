@@ -1,4 +1,6 @@
-function Header() {
+import { memo } from 'react'
+
+const Header = memo(function Header() {
   return (
     <header className="text-center mb-16" role="banner">
       <h1 className="text-6xl font-bold mb-4 gradient-text from-blue-400 via-purple-400 to-pink-400">
@@ -9,6 +11,6 @@ function Header() {
       </p>
     </header>
   )
-}
+})
 
 export default Header
