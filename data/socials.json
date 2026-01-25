@@ -97,6 +97,47 @@
           "isPrimary": true
         },
         {
+          "platform": "ZAO Nexus",
+          "handle": "Ecosystem Hub",
+          "url": "https://www.thezao.com/nexus",
+          "purpose": "Centralized link hub for the entire ZAO ecosystem",
+          "notes": "All ZAO projects and resources in one place",
+          "icon": "globe",
+          "isPrimary": true
+        },
+        {
+          "platform": "$ZAO Token",
+          "handle": "$ZAO",
+          "url": "https://www.thezao.com/zao-token",
+          "purpose": "Learn about $ZAO, earning mechanics, and community participation",
+          "notes": "Token economics and how to earn",
+          "icon": "globe"
+        },
+        {
+          "platform": "ZAO Calendar",
+          "handle": "Events Calendar",
+          "url": "https://www.thezao.com/calendar",
+          "purpose": "Public-facing calendar for ZAO ecosystem events",
+          "notes": "All upcoming ZAO events and activities",
+          "icon": "globe"
+        },
+        {
+          "platform": "ZAO Leaderboard",
+          "handle": "Community Rankings",
+          "url": "https://www.thezao.com/zao-leaderboard",
+          "purpose": "Community participation and leaderboard visibility",
+          "notes": "Track top contributors and engagement",
+          "icon": "globe"
+        },
+        {
+          "platform": "About The ZAO",
+          "handle": "Mission & Values",
+          "url": "https://www.thezao.com/about",
+          "purpose": "Mission, values, and background of The ZAO",
+          "notes": "Learn about ZAO's vision and purpose",
+          "icon": "globe"
+        },
+        {
           "platform": "Twitter (X)",
           "handle": "@TheZAODAO",
           "url": "https://x.com/TheZAODAO",
