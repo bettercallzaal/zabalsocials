@@ -17,6 +17,19 @@ import {
 } from 'lucide-react'
 import socialsData from '../data/socials.json'
 
+// === Analytics Helper ===
+// Centralized function for tracking events with Plausible Analytics
+// Fails silently if Plausible is not loaded (e.g., blocked by ad blockers)
+const trackEvent = (eventName, props = {}) => {
+  if (typeof window !== 'undefined' && window.plausible) {
+    window.plausible(eventName, { props })
+    // Log events in development for debugging
+    if (import.meta.env.DEV) {
+      console.log('[Analytics]', eventName, props)
+    }
+  }
+}
+
 // === Icon Mapping ===
 // Maps icon string identifiers from socials.json to Lucide React components
 // See docs/DATA_SCHEMA.md for valid icon names
@@ -40,6 +53,50 @@ function App() {
   // === State Management ===
   const [selectedBrand, setSelectedBrand] = useState(null)
   const [searchTerm, setSearchTerm] = useState('')
+
+  // === Analytics: Search Usage Tracking ===
+  // Debounced search tracking to avoid excessive events
+  const handleSearchChange = (e) => {
+    const query = e.target.value
+    setSearchTerm(query)
+    
+    // Track search usage after user stops typing (debounced via setTimeout)
+    if (query.length > 0) {
+      // Clear previous timeout if user is still typing
+      if (window.searchTimeout) clearTimeout(window.searchTimeout)
+      
+      window.searchTimeout = setTimeout(() => {
+        // Calculate if search has results
+        const hasResults = socialsData.brands.some(brand => 
+          brand.name.toLowerCase().includes(query.toLowerCase()) ||
+          brand.description.toLowerCase().includes(query.toLowerCase()) ||
+          brand.platforms.some(p => 
+            p.platform.toLowerCase().includes(query.toLowerCase()) ||
+            p.purpose.toLowerCase().includes(query.toLowerCase())
+          )
+        )
+        
+        // Track search event with privacy-friendly metadata
+        trackEvent('Search Used', {
+          query_length: query.length,
+          has_results: hasResults
+        })
+      }, 1000) // 1 second debounce
+    }
+  }
+
+  // === Analytics: Brand Filter Tracking ===
+  const handleBrandFilterClick = (brandId) => {
+    const isActivating = brandId !== selectedBrand
+    
+    // Track filter usage
+    trackEvent('Brand Filter Used', {
+      brand: brandId || 'all',
+      active: isActivating
+    })
+    
+    setSelectedBrand(brandId)
+  }
 
   // === Filtering Logic ===
   // Filter brands by search term (searches across brand name, description, platform names, and purposes)
@@ -92,7 +149,7 @@ function App() {
               type="search"
               placeholder="Search brands, platforms, or purposes..."
               value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
+              onChange={handleSearchChange}
               aria-label="Search brands, platforms, or purposes"
               className="w-full pl-10 pr-4 py-3 bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 focus:ring-offset-slate-900 focus:border-transparent transition-shadow"
             />
@@ -100,7 +157,7 @@ function App() {
           
           <div className="flex gap-2 overflow-x-auto pb-2 sm:pb-0" role="group" aria-label="Brand filter buttons">
             <button
-              onClick={() => setSelectedBrand(null)}
+              onClick={() => handleBrandFilterClick(null)}
               aria-pressed={!selectedBrand}
               aria-label="Show all brands"
               className={`px-4 py-2 rounded-lg font-medium transition-all whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 focus:ring-offset-slate-900 ${
@@ -114,7 +171,7 @@ function App() {
             {socialsData.brands.map(brand => (
               <button
                 key={brand.id}
-                onClick={() => setSelectedBrand(brand.id)}
+                onClick={() => handleBrandFilterClick(brand.id)}
                 aria-pressed={selectedBrand === brand.id}
                 aria-label={`Filter to show only ${brand.name}`}
                 className={`px-4 py-2 rounded-lg font-medium transition-all whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 focus:ring-offset-slate-900 ${
@@ -159,6 +216,15 @@ function App() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`Visit ${brand.name} on ${platform.platform}: ${platform.handle}`}
+                        onClick={() => {
+                          // === Analytics: Social Link Click Tracking ===
+                          trackEvent('Social Link Click', {
+                            brand: brand.name,
+                            platform: platform.platform,
+                            isPrimary: platform.isPrimary || false,
+                            url: platform.url
+                          })
+                        }}
                         className="group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 rounded-xl p-4 transition-all duration-300 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 focus:ring-offset-slate-900 block"
                       >
                         <div className="flex items-start gap-3">
